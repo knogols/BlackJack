@@ -1,8 +1,10 @@
 package mäng;
+
 import java.util.Random;
+
 /**
  * Created by Lisete on 15/12/15.
- *Kaardipaki kasutus
+ * Kaardipaki kasutus
  */
 public class KaardiPakk {
 
@@ -16,6 +18,7 @@ public class KaardiPakk {
 
     /**
      * konstruktor.
+     *
      * @param
      */
     public KaardiPakk(int numberKaardiPakk, boolean segama) {
@@ -66,14 +69,15 @@ public class KaardiPakk {
 
     /**
      * Jagab pakist järgmise pealmise kaardi
+     *
      * @return
      */
     public Kaart jagaJ2rgmineKaart() {
 
         Kaart pealmine = this.minuKaardid[0]; // Pealmine kaart
 
-        for(int c = 1; c < this.numberKaardid; c++) {
-            this.minuKaardid[c-1] = this.minuKaardid[c];
+        for (int c = 1; c < this.numberKaardid; c++) {
+            this.minuKaardid[c - 1] = this.minuKaardid[c];
         }
         this.minuKaardid[this.numberKaardid - 1] = null;
 
