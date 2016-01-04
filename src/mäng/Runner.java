@@ -1,4 +1,4 @@
-package blackJack;
+package mäng;
 
 import java.util.Scanner;
 
@@ -11,15 +11,34 @@ public class Runner {
         Scanner sc = new Scanner(System.in);
         KaardiPakk seeKaardiPakk = new KaardiPakk(1, true);
 
-        M2ngija mina = new M2ngija("Kätlin");
+        System.out.println("Olete sisenemas mängu BlackJack");
+        System.out.println("Palun sisestage oma vanus!");
+
+        int kasutajaSisestus = sc.nextInt();
+
+        if (kasutajaSisestus >= 21) {
+            System.out.println("Kaardid on jagatud\n");
+        } else {
+            System.err.printf("Oled liiga noor. Hasartmängud on lubatud alates 21 eluaastast!");
+            System.exit(1);
+        }
+
+        M2ngija mina = new M2ngija("Mängija");
         M2ngija jagaja = new M2ngija("Jagaja");
 
+        System.out.println("Palun sisestage oma nimi!");
+
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
 
-        System.out.println("Kaardid on jagatud\n");
+
+
+        /**String m2ngijaNimi = sc.next();
+        System.out.println("Sisesta oma nimi");**/
+
+
         mina.m2ngijaKaardid(true);
         jagaja.m2ngijaKaardid(false);
         System.out.println("\n");
@@ -32,11 +51,11 @@ public class Runner {
 
             if(!minaDone) {
 
-                System.out.print("Hit or Stay? (Enter H or S): ");
+                System.out.print("Juurde või Jääb? (Sisesta 1 või 2): ");
                 ans = sc.next();
                 System.out.println();
 
-                if (ans.compareToIgnoreCase("H") == 0) {
+                if (ans.compareToIgnoreCase("1 või 2") == 0) {
 
                     minaDone = !mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
                 } else {
@@ -47,11 +66,11 @@ public class Runner {
 
             if (!jagajaDone) {
                 if (jagaja.m2ngijaKaartideSumma() < 17) {
-                    System.out.println("The Dealer hits\n");
+                    System.out.println("Jagaja võtab juurde\n");
                     jagajaDone = !jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
                     jagaja.m2ngijaKaardid(false);
                 } else {
-                    System.out.println("The Dealer stays\n");
+                    System.out.println("Jagaja jääb\n");
                     jagajaDone = true;
                 }
             }

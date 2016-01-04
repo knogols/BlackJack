@@ -1,24 +1,13 @@
-package blackJack;
-
+package mäng;
 /**
  * Created by Lisete on 15/12/15.
  *
  */
 public class M2ngija {
-    /**
-     * Mängija nimi.
-     */
-    private String nimi;
 
-    /**
-     * Mängija kaart
-     */
-    private Kaart[] k2si = new Kaart[10];
-
-    /**
-     * Kaartide arv mängija käes
-     */
-    private int kaartideArvM;
+    String nimi; //Mängija nimi
+    private Kaart[] k2si = new Kaart[10]; //Mängija kaart
+    private int kaartideArvM; //Kaartide arv mängija käes
 
     /**
      * Mängija konstruktor
@@ -27,16 +16,10 @@ public class M2ngija {
     public M2ngija(String aNimi) {
 
         this.nimi = aNimi;
-
-        // Mängija käsi tühi
-        this.tyhiK2si();
-
+        this.tyhiK2si(); //Mängija käsi tühi
     }
 
-    /**
-     * Mängijal ei ole kaarte
-     */
-    public void tyhiK2si() {
+    public void tyhiK2si() { // Mängijal ei ole kaarte
 
         for (int c = 0; c < 10; c++) {
             this.k2si[c] = null;
@@ -51,12 +34,11 @@ public class M2ngija {
      */
     public boolean lisaKaart(Kaart aKaart) {
 
-        //prindib errori kui mängijal on maksimum arv kaarte
-        if (this.kaartideArvM == 10) {
-            System.err.printf("%s's mängijal juba on 10 kaarti; " + "ei saa uut kaarti\n", this.nimi);
+        if (this.kaartideArvM == 10) { //prindib errori kui mängijal on maksimum arv kaarte
+            System.err.printf("%s mängijal juba on 10 kaarti; " + "ei saa uut kaarti\n", this.nimi);
             System.exit(1);
         }
-        //
+
         this.k2si[this.kaartideArvM] = aKaart;
         this.kaartideArvM++;
 
@@ -74,22 +56,18 @@ public class M2ngija {
         int kaardiNumber;
         int ässaNumber = 0;
 
-        // arvutab kaardi panuse summaks
-        for (int c = 0; c < this.kaartideArvM; c++) {
+        for (int c = 0; c < this.kaartideArvM; c++) { //arvutab kaardi panuse summaks
 
-            // käesoleva kaardi number
-            kaardiNumber = this.k2si[c].getNumber();
+            kaardiNumber = this.k2si[c].getNumber(); //käesoleva kaardi number
 
             if (kaardiNumber == 1) { // äss
                 ässaNumber++;
                 k2eSumma += 11;
-            } else if (kaardiNumber > 10) { // pildiga kaart
+            } else if (kaardiNumber > 10) { //pildiga kaart
                 k2eSumma += 10;
             } else {
                 k2eSumma += kaardiNumber;
             }
-
-
         }
 
         while (k2eSumma > 21 && ässaNumber > 0) {
@@ -106,7 +84,7 @@ public class M2ngija {
      */
     public void m2ngijaKaardid(boolean n2itaEsimestKaarti) {
 
-        System.out.printf("%s's kaardid:\n", this.nimi);
+        System.out.printf("%s kaardid:\n", this.nimi);
         for (int c = 0; c < this.kaartideArvM; c++) {
             if (c == 0 && !n2itaEsimestKaarti) {
                 System.out.println(" [varjatud]");

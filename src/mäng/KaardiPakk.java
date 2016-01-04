@@ -1,24 +1,14 @@
-package blackJack;
+package mäng;
 import java.util.Random;
 /**
  * Created by Lisete on 15/12/15.
- *
- * Kaardipaki kasutus
+ *Kaardipaki kasutus
  */
 public class KaardiPakk {
-    /**
-     * Massiiv
-     */
+
     private Kaart[] minuKaardid;
+    private int numberKaardid; //Kaartide arv kaardipakis
 
-    /**
-     * Kaartide arv kaardipakis
-     */
-    private int numberKaardid;
-
-    /**
-     * Konstruktor
-     */
     public KaardiPakk() {
 
         this(1, false);
@@ -48,6 +38,10 @@ public class KaardiPakk {
             }
         }
 
+        if (segama) {
+            this.segama();
+        }
+
     }
 
     /**
@@ -56,7 +50,6 @@ public class KaardiPakk {
     public void segama() {
 
         Random rng = new Random();
-
         Kaart temp;
 
         int j;
@@ -77,8 +70,7 @@ public class KaardiPakk {
      */
     public Kaart jagaJ2rgmineKaart() {
 
-        //pealmine kaart
-        Kaart pealmine = this.minuKaardid[0];
+        Kaart pealmine = this.minuKaardid[0]; // Pealmine kaart
 
         for(int c = 1; c < this.numberKaardid; c++) {
             this.minuKaardid[c-1] = this.minuKaardid[c];

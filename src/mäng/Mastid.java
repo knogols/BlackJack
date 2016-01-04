@@ -1,8 +1,8 @@
-package blackJack;
+package mäng;
 
 /**
  * Created by Lisete on 15/12/15.
- * Kaartide mastid
+ * Mastid. Neli võimalikku
  */
 public enum Mastid {
     Risti,

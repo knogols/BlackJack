@@ -1,40 +1,30 @@
-package blackJack;
+package mäng;
 
 /**
  * Created by Lisete on 15/12/15.
- * Kaartide kasutamine
+ * Kaartide kasutamine.
  */
 public class Kaart {
-    /**
-     * Üks mastidest kaardile
-     */
-    private Mastid minuMastid;
 
-    /**
-     * Tabamuste arv, Äss: 1, Poiss - Kuningas: 11-13
-     */
-    private int minuNumber;
+    private int kaardiNumber; // Äss: 1, Poiss - Kuningas 11-13
+    private Mastid kaardiMast; // Mastile vastav kaart
 
     /**
      * kaardi konstruktor
-     * @param aMastid kaardi mast
-     * @param aNumber kaardi number
+     * @param Mast
+     * @param aNumber
      */
+    public Kaart(Mastid Mast, int aNumber) {
 
-    public Kaart(Mastid aMastid, int aNumber) {
-
-        this.minuMastid = aMastid;
-        /**
-         * Kontrollib numbri sobivust. Sobivad arvud 1-13
-         */
-        if (aNumber >= 1 && aNumber <= 13) {
-            this.minuNumber = aNumber;
+        this.kaardiMast = Mast;
+        if (aNumber >= 1 && aNumber <= 13) { //Kontrollib numbri sobivust. Sobivad arvud 1-13
+            this.kaardiNumber = aNumber;
         } else {
             System.err.println(aNumber + " ei ole sobiv number");
             System.exit(1);
         }
 
-        minuNumber = aNumber;
+        kaardiNumber = aNumber;
     }
 
     /**
@@ -42,7 +32,7 @@ public class Kaart {
      * @return number
      */
     public int getNumber() {
-        return minuNumber;
+        return kaardiNumber;
     }
 
     /**
@@ -53,7 +43,7 @@ public class Kaart {
 
         String numStr = "number";
 
-        switch(this.minuNumber) {
+        switch(this.kaardiNumber) {
 
             case 2:
                 numStr = "Kaks";
@@ -97,6 +87,6 @@ public class Kaart {
 
         }
 
-        return minuMastid.toString() + " " + numStr;  /**numStr + " on " + minuMastid.toString();**/
+        return kaardiMast.toString() + " " + numStr;
     }
 }
