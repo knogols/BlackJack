@@ -26,7 +26,7 @@ public class Runner {
         M2ngija mina = new M2ngija("Mängija");
         M2ngija jagaja = new M2ngija("Jagaja");
 
-        System.out.println("Palun sisestage oma nimi!");
+
 
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
