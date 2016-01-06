@@ -1,11 +1,14 @@
 package mäng;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
+
 
 /**
  * Created by Lisete on 15/12/15.
  */
-public class Runner {
+public class Runner extends JFrame {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -87,9 +90,29 @@ public class Runner {
         int jagajaSumma = jagaja.m2ngijaKaartideSumma();
 
         if (minuSumma > jagajaSumma && minuSumma <= 21 || jagajaSumma > 21) {
+            Runner gui = new Runner();
+            gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            gui.setVisible(true);
+            gui.pack();
+            gui.setTitle("Aken");
             System.out.println("Võitsid!");
         } else {
             System.out.println("Kaotasid!");
         }
+
     }
+
+    private ImageIcon pilt;
+    private JLabel pealkiri;
+
+    Runner () {
+        setLayout(new FlowLayout());
+
+        pilt = new ImageIcon(getClass().getResource("pilt.png"));
+
+        pealkiri = new JLabel(pilt);
+        add(pealkiri);
+    }
+
+
 }
