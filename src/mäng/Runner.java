@@ -13,20 +13,20 @@ public class Runner extends JFrame {
 
         Scanner sc = new Scanner(System.in);
         KaardiPakk seeKaardiPakk = new KaardiPakk(1, true);
-        Scanner kasutajaPanus = new Scanner(System.in);
-
+        Scanner panus = new Scanner(System.in);
 
         System.out.println("Olete sisenemas mängu BlackJack");
         System.out.println("Palun sisestage oma vanus!");
 
-        int kasutajaSisestus = sc.nextInt();
-        double m2ngijaRaha = 100.00; //mängija raha mängu alguses
+        int kasutajaSisestus = sc.nextInt(); //mängija vanus
+        int m2ngijaRaha = 100; //mängija raha mängu alguses
 
         if (kasutajaSisestus >= 21) {
 
             System.out.println("Sul on " + m2ngijaRaha + "€, kui palju soovid panustada? ");
 
-            double m2ngijaPanus = kasutajaPanus.nextDouble();
+            int m2ngijaPanus = panus.nextInt();
+            m2ngijaRaha = m2ngijaRaha - m2ngijaPanus;
 
             if(m2ngijaPanus > m2ngijaRaha){
                 System.out.println("Sul ei ole piisavalt raha. Sind logitakse automaatselt välja");
@@ -39,14 +39,12 @@ public class Runner extends JFrame {
             System.exit(1);
         }
 
-
         while(m2ngijaRaha > 0){
 
                 System.out.println("Kaardid on jagatud\n");
                 break;
 
             }
-
 
         M2ngija mina = new M2ngija("Mängija");
         M2ngija jagaja = new M2ngija("Jagaja");
@@ -106,7 +104,7 @@ public class Runner extends JFrame {
         sc.close();
 
         mina.m2ngijaKaardid(true); //näitab kaarte
-        jagaja.m2ngijaKaardid(true); //näitab ka jagaja kaarte
+        jagaja.m2ngijaKaardid(true); //näitab ka jagaja mõlemat kaarti
 
         int minuSumma = mina.m2ngijaKaartideSumma();
         int jagajaSumma = jagaja.m2ngijaKaartideSumma();
@@ -119,15 +117,14 @@ public class Runner extends JFrame {
             gui.setTitle("BlackJack");
             System.out.println("Võitsid!");
         } else {
-            System.out.println("Kaotasid!");
+
+            System.out.println("Kaotasid! Sulle jäi alles " + m2ngijaRaha + "€");
         }
 
     }
 
     private ImageIcon pilt;
     private JLabel pealkiri;
-    private ImageIcon pilt2;
-    private JLabel pealkiri2;
 
     Runner () {
         setLayout(new FlowLayout());
