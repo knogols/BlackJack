@@ -16,7 +16,7 @@ public class KaardiPakk {
      *
      * @param
      */
-    public KaardiPakk (int numberKaart, boolean segama) {
+    public KaardiPakk(int numberKaart, boolean segama) {
 
         this.numberKaardid = numberKaart * 52;
         this.minuKaardid = new Kaart[this.numberKaardid];
@@ -84,10 +84,10 @@ public class KaardiPakk {
 
     //public void v2ljastaKaart(int numberV2ljastada) {
 
-      //  for (int c = 0; c < numberV2ljastada; c++) {
-           // System.out.printf("% 3d/%d %s\n", c + 1, this.numberKaardid, this.minuKaardid[c].toString());
-       // }
-       // System.out.printf("\t[%d others]\n", this.numberKaardid - numberV2ljastada);
+    //  for (int c = 0; c < numberV2ljastada; c++) {
+    // System.out.printf("% 3d/%d %s\n", c + 1, this.numberKaardid, this.minuKaardid[c].toString());
+    // }
+    // System.out.printf("\t[%d others]\n", this.numberKaardid - numberV2ljastada);
     //}
 
 }

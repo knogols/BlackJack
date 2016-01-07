@@ -11,6 +11,7 @@ public class Kaart {
 
     /**
      * kaardi konstruktor
+     *
      * @param Mast
      * @param aNumber
      */
@@ -29,6 +30,7 @@ public class Kaart {
 
     /**
      * Tagastab kaardi numbri
+     *
      * @return number
      */
     public int getNumber() {
@@ -37,13 +39,14 @@ public class Kaart {
 
     /**
      * Tagastab kaardi nime
+     *
      * @return
      */
     public String toString() {
 
         String numStr = "number";
 
-        switch(this.kaardiNumber) {
+        switch (this.kaardiNumber) {
 
             case 2:
                 numStr = "Kaks";

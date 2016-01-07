@@ -1,7 +1,7 @@
 package mäng;
+
 /**
  * Created by Lisete on 15/12/15.
- *
  */
 public class M2ngija {
 
@@ -11,6 +11,7 @@ public class M2ngija {
 
     /**
      * Mängija konstruktor
+     *
      * @param aNimi mängija nimi
      */
     public M2ngija(String aNimi) {
@@ -29,6 +30,7 @@ public class M2ngija {
 
     /**
      * Lisab kaardi mängijale
+     *
      * @param aKaart lisatav kaart
      * @return kas käes olevate kaartide summa on väiksem või võrdne 21ga
      */
@@ -44,10 +46,11 @@ public class M2ngija {
 
         return (this.m2ngijaKaartideSumma() <= 21);
 
-        }
+    }
 
     /**
      * Mängija käes olevate kaartide summa
+     *
      * @return tagastab summa
      */
     public int m2ngijaKaartideSumma() {
@@ -79,7 +82,6 @@ public class M2ngija {
     }
 
     /**
-     *
      * @param n2itaEsimestKaarti esimene kaart peidetud või mitte
      */
     public void m2ngijaKaardid(boolean n2itaEsimestKaarti) {
@@ -95,5 +97,5 @@ public class M2ngija {
 
     }
 
-    }
+}
 

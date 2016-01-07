@@ -28,7 +28,7 @@ public class Runner extends JFrame {
             int m2ngijaPanus = panus.nextInt();
             m2ngijaRaha = m2ngijaRaha - m2ngijaPanus;
 
-            if(m2ngijaPanus > m2ngijaRaha){
+            if (m2ngijaPanus > m2ngijaRaha) {
                 System.out.println("Sul ei ole piisavalt raha. Sind logitakse automaatselt välja");
                 System.exit(1);
             }
@@ -39,12 +39,12 @@ public class Runner extends JFrame {
             System.exit(1);
         }
 
-        while(m2ngijaRaha > 0){
+        while (m2ngijaRaha > 0) {
 
-                System.out.println("Kaardid on jagatud\n");
-                break;
+            System.out.println("Kaardid on jagatud\n");
+            break;
 
-            }
+        }
 
         M2ngija mina = new M2ngija("Mängija");
         M2ngija jagaja = new M2ngija("Jagaja");
@@ -69,7 +69,7 @@ public class Runner extends JFrame {
 
             int sisestus = sc.nextInt();
 
-            if(!minaL6petanud) {
+            if (!minaL6petanud) {
                 if (sisestus == 1) {
 
                     minaL6petanud = !mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
@@ -126,7 +126,7 @@ public class Runner extends JFrame {
     private ImageIcon pilt;
     private JLabel pealkiri;
 
-    Runner () {
+    Runner() {
         setLayout(new FlowLayout());
 
         pilt = new ImageIcon(getClass().getResource("pilt.png"));
