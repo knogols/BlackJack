@@ -11,24 +11,19 @@ public class KaardiPakk {
     private Kaart[] minuKaardid;
     private int numberKaardid; //Kaartide arv kaardipakis
 
-    public KaardiPakk() {
-
-        this(1, false);
-    }
-
     /**
      * konstruktor.
      *
      * @param
      */
-    public KaardiPakk(int numberKaardiPakk, boolean segama) {
+    public KaardiPakk (int numberKaart, boolean segama) {
 
-        this.numberKaardid = numberKaardiPakk * 52;
+        this.numberKaardid = numberKaart * 52;
         this.minuKaardid = new Kaart[this.numberKaardid];
 
         int c = 0;
 
-        for (int d = 0; d < numberKaardiPakk; d++) {
+        for (int d = 0; d < numberKaart; d++) {
 
             for (int s = 0; s < 4; s++) {
 
@@ -86,12 +81,13 @@ public class KaardiPakk {
         return pealmine;
     }
 
-    public void v2ljastaKaart(int numberV2ljastada) {
 
-        for (int c = 0; c < numberV2ljastada; c++) {
-            System.out.printf("% 3d/%d %s\n", c + 1, this.numberKaardid, this.minuKaardid[c].toString());
-        }
-        System.out.printf("\t[%d others]\n", this.numberKaardid - numberV2ljastada);
-    }
+    //public void v2ljastaKaart(int numberV2ljastada) {
+
+      //  for (int c = 0; c < numberV2ljastada; c++) {
+           // System.out.printf("% 3d/%d %s\n", c + 1, this.numberKaardid, this.minuKaardid[c].toString());
+       // }
+       // System.out.printf("\t[%d others]\n", this.numberKaardid - numberV2ljastada);
+    //}
 
 }

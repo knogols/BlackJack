@@ -79,7 +79,7 @@ public class M2ngija {
     }
 
     /**
-     * Mängija kaartide väljastamine
+     *
      * @param n2itaEsimestKaarti esimene kaart peidetud või mitte
      */
     public void m2ngijaKaardid(boolean n2itaEsimestKaarti) {

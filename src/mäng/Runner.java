@@ -33,48 +33,51 @@ public class Runner extends JFrame {
 
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
+
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
-
-
-
-        /**String m2ngijaNimi = sc.next();
-        System.out.println("Sisesta oma nimi");**/
 
 
         mina.m2ngijaKaardid(true);
         jagaja.m2ngijaKaardid(false);
         System.out.println("\n");
 
-        boolean minaDone = false;
-        boolean jagajaDone = false;
-        String ans;
+        boolean minaL6petanud = false;
+        boolean jagajaL6petanud = false;
 
-        while (!minaDone || !jagajaDone) {
+        System.out.print("Juurde või Jääb? (Sisesta 1 või 2): ");
+        System.out.println();
 
-            if(!minaDone) {
+        while (!minaL6petanud || !jagajaL6petanud) {
 
-                System.out.print("Juurde või Jääb? (Sisesta 1 või 2): ");
-                ans = sc.next();
-                System.out.println();
+            int sisestus = sc.nextInt();
 
-                if (ans.compareToIgnoreCase("1 või 2") == 0) {
+            if(!minaL6petanud) {
+                if (sisestus == 1) {
 
-                    minaDone = !mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
+                    minaL6petanud = !mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
+                    mina.m2ngijaKaardid(true);
+
                 } else {
-                    minaDone = true;
+
+                    minaL6petanud = true;
 
                 }
             }
 
-            if (!jagajaDone) {
+            if (sisestus == 2) {
+
+                minaL6petanud = true;
+            }
+
+            if (!jagajaL6petanud) {
                 if (jagaja.m2ngijaKaartideSumma() < 17) {
                     System.out.println("Jagaja võtab juurde\n");
-                    jagajaDone = !jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
+                    jagajaL6petanud = !jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
                     jagaja.m2ngijaKaardid(false);
                 } else {
                     System.out.println("Jagaja jääb\n");
-                    jagajaDone = true;
+                    jagajaL6petanud = true;
                 }
             }
 
@@ -83,8 +86,8 @@ public class Runner extends JFrame {
 
         sc.close();
 
-        mina.m2ngijaKaardid(true);
-        jagaja.m2ngijaKaardid(true);
+        mina.m2ngijaKaardid(true); //näitab kaarte
+        jagaja.m2ngijaKaardid(true); //näitab ka jagaja kaarte
 
         int minuSumma = mina.m2ngijaKaartideSumma();
         int jagajaSumma = jagaja.m2ngijaKaartideSumma();
@@ -94,7 +97,7 @@ public class Runner extends JFrame {
             gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             gui.setVisible(true);
             gui.pack();
-            gui.setTitle("Aken");
+            gui.setTitle("BlackJack");
             System.out.println("Võitsid!");
         } else {
             System.out.println("Kaotasid!");
@@ -104,6 +107,8 @@ public class Runner extends JFrame {
 
     private ImageIcon pilt;
     private JLabel pealkiri;
+    private ImageIcon pilt2;
+    private JLabel pealkiri2;
 
     Runner () {
         setLayout(new FlowLayout());
@@ -112,6 +117,8 @@ public class Runner extends JFrame {
 
         pealkiri = new JLabel(pilt);
         add(pealkiri);
+
+
     }
 
 
