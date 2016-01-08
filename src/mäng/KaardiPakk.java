@@ -11,11 +11,6 @@ public class KaardiPakk {
     private Kaart[] minuKaardid;
     private int numberKaardid; //Kaartide arv kaardipakis
 
-    /**
-     * konstruktor.
-     *
-     * @param
-     */
     public KaardiPakk(int numberKaart, boolean segama) {
 
         this.numberKaardid = numberKaart * 52;
