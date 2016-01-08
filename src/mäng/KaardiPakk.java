@@ -65,7 +65,7 @@ public class KaardiPakk {
     /**
      * Jagab pakist järgmise pealmise kaardi
      *
-     * @return
+     * @return jagatud kaart
      */
     public Kaart jagaJ2rgmineKaart() {
 
@@ -76,18 +76,8 @@ public class KaardiPakk {
         }
         this.minuKaardid[this.numberKaardid - 1] = null;
 
-        this.numberKaardid--;
+        this.numberKaardid--; // kaart vähemaks
 
         return pealmine;
     }
-
-
-    //public void v2ljastaKaart(int numberV2ljastada) {
-
-    //  for (int c = 0; c < numberV2ljastada; c++) {
-    // System.out.printf("% 3d/%d %s\n", c + 1, this.numberKaardid, this.minuKaardid[c].toString());
-    // }
-    // System.out.printf("\t[%d others]\n", this.numberKaardid - numberV2ljastada);
-    //}
-
 }

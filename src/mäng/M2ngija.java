@@ -84,7 +84,7 @@ public class M2ngija {
     /**
      * @param n2itaEsimestKaarti esimene kaart peidetud või mitte
      */
-    public void m2ngijaKaardid(boolean n2itaEsimestKaarti) {
+    public void n2itaEsimest(boolean n2itaEsimestKaarti) {
 
         System.out.printf("%s kaardid:\n", this.nimi);
         for (int c = 0; c < this.kaartideArvM; c++) {

@@ -10,10 +10,9 @@ public class Kaart {
     private Mastid kaardiMast; // Mastile vastav kaart
 
     /**
-     * kaardi konstruktor
      *
-     * @param Mast
-     * @param aNumber
+     * @param Mast kaardi mast
+     * @param aNumber kaardi number
      */
     public Kaart(Mastid Mast, int aNumber) {
 
@@ -29,7 +28,7 @@ public class Kaart {
     }
 
     /**
-     * Tagastab kaardi numbri
+     * Tagastab kaardi numbri.
      *
      * @return number
      */
@@ -38,9 +37,9 @@ public class Kaart {
     }
 
     /**
-     * Tagastab kaardi nime
+     * Tagastab kaardi nime.
      *
-     * @return
+     * @return nimi
      */
     public String toString() {
 

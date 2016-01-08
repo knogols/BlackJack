@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Lisete on 15/12/15.
  */
-public class Runner extends JFrame {
+public class Main extends JFrame {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -55,8 +55,8 @@ public class Runner extends JFrame {
         mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart()); //mängijakaart
         jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart()); //jagajakaart
 
-        mina.m2ngijaKaardid(true); // näitab mängija kaarte
-        jagaja.m2ngijaKaardid(false); // näitab vaid ühte jagaja kaarti, teine varjatud
+        mina.n2itaEsimest(true); // näitab mängija kaarte
+        jagaja.n2itaEsimest(false); // näitab vaid ühte jagaja kaarti, teine varjatud
         System.out.println("\n");
 
         boolean minaL6petanud = false;
@@ -73,7 +73,7 @@ public class Runner extends JFrame {
                 if (sisestus == 1) {
 
                     minaL6petanud = !mina.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
-                    mina.m2ngijaKaardid(true);
+                    mina.n2itaEsimest(true);
 
                 } else {
 
@@ -91,7 +91,7 @@ public class Runner extends JFrame {
                 if (jagaja.m2ngijaKaartideSumma() < 17) {
                     System.out.println("Jagaja võtab juurde\n");
                     jagajaL6petanud = !jagaja.lisaKaart(seeKaardiPakk.jagaJ2rgmineKaart());
-                    jagaja.m2ngijaKaardid(false);
+                    jagaja.n2itaEsimest(false);
                 } else {
                     System.out.println("Jagaja jääb\n");
                     jagajaL6petanud = true;
@@ -103,14 +103,14 @@ public class Runner extends JFrame {
 
         sc.close();
 
-        mina.m2ngijaKaardid(true); //näitab kaarte
-        jagaja.m2ngijaKaardid(true); //näitab ka jagaja mõlemat kaarti
+        mina.n2itaEsimest(true); //näitab kaarte
+        jagaja.n2itaEsimest(true); //näitab ka jagaja mõlemat kaarti
 
         int minuSumma = mina.m2ngijaKaartideSumma();
         int jagajaSumma = jagaja.m2ngijaKaartideSumma();
 
         if (minuSumma > jagajaSumma && minuSumma <= 21 || jagajaSumma > 21) {
-            Runner gui = new Runner();
+            Main gui = new Main();
             gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             gui.setVisible(true);
             gui.pack();
@@ -126,7 +126,7 @@ public class Runner extends JFrame {
     private ImageIcon pilt;
     private JLabel pealkiri;
 
-    Runner() {
+    Main() {
         setLayout(new FlowLayout());
 
         pilt = new ImageIcon(getClass().getResource("pilt.png"));
