@@ -43,12 +43,12 @@ public class KaardiPakk {
     }
 
     /**
-     *
+     * Kaartide segamine
      */
     public void segama() {
 
-        Random rng = new Random();
-        Kaart temp;
+        Random rng = new Random(); // suvaline number
+        Kaart temp; // ajutine kaart
 
         int j;
         for (int i = 0; i < this.numberKaardid; i++) {
